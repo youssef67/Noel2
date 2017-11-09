@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des enfants par ville.</h1>
+
+    {% for enfant in enfants %}
+        {% if enfant.ville == ville %}
+            <ul>
+                <li>{{ enfant.nom }} {{ enfant.prenom }}</a></li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

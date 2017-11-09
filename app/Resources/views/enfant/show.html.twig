@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enfant</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ enfant.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ enfant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ enfant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if enfant.dateCreation %}{{ enfant.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ enfant.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ enfant.ville }}</td>
+            </tr>
+            <tr>
+                <th>Cadeau1</th>
+                <td>{{ enfant.cadeau1 }}</td>
+            </tr>
+            <tr>
+                <th>Cadeau2</th>
+                <td>{{ enfant.cadeau2 }}</td>
+            </tr>
+            <tr>
+                <th>Cadeau3</th>
+                <td>{{ enfant.cadeau3 }}</td>
+            </tr>
+            <tr>
+                <th>Cadeau4</th>
+                <td>{{ enfant.cadeau4 }}</td>
+            </tr>
+            <tr>
+                <th>Cadeau5</th>
+                <td>{{ enfant.cadeau5 }}</td>
+            </tr>
+            <tr>
+                <th>Statutcadeau1</th>
+                <td>{{ enfant.statutCadeau1 }}</td>
+            </tr>
+            <tr>
+                <th>Statutcadeau2</th>
+                <td>{{ enfant.statutCadeau2 }}</td>
+            </tr>
+            <tr>
+                <th>Statutcadeau3</th>
+                <td>{{ enfant.statutCadeau3 }}</td>
+            </tr>
+            <tr>
+                <th>Statutcadeau4</th>
+                <td>{{ enfant.statutCadeau4 }}</td>
+            </tr>
+            <tr>
+                <th>Statutcadeau5</th>
+                <td>{{ enfant.statutCadeau5 }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ enfant.genre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('enfant_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('enfant_edit', { 'id': enfant.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

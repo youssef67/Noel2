@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Père Noël, voici la liste des cadeaux à livrer.</h1>
+
+    {% for enfant in enfants %}
+        <a href="/enfant/ville/{{ enfant.ville }}">{{ enfant.ville }}</a><br>
+    {% endfor %}
+{% endblock %}

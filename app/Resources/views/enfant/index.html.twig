@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enfants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Datecreation</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Cadeau1</th>
+                <th>Cadeau2</th>
+                <th>Cadeau3</th>
+                <th>Cadeau4</th>
+                <th>Cadeau5</th>
+                <th>Statutcadeau1</th>
+                <th>Statutcadeau2</th>
+                <th>Statutcadeau3</th>
+                <th>Statutcadeau4</th>
+                <th>Statutcadeau5</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enfant in enfants %}
+            <tr>
+                <td><a href="{{ path('enfant_show', { 'id': enfant.id }) }}">{{ enfant.id }}</a></td>
+                <td>{{ enfant.nom }}</td>
+                <td>{{ enfant.prenom }}</td>
+                <td>{% if enfant.dateCreation %}{{ enfant.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ enfant.adresse }}</td>
+                <td>{{ enfant.ville }}</td>
+                <td>{{ enfant.cadeau1 }}</td>
+                <td>{{ enfant.cadeau2 }}</td>
+                <td>{{ enfant.cadeau3 }}</td>
+                <td>{{ enfant.cadeau4 }}</td>
+                <td>{{ enfant.cadeau5 }}</td>
+                <td>{{ enfant.statutCadeau1 }}</td>
+                <td>{{ enfant.statutCadeau2 }}</td>
+                <td>{{ enfant.statutCadeau3 }}</td>
+                <td>{{ enfant.statutCadeau4 }}</td>
+                <td>{{ enfant.statutCadeau5 }}</td>
+                <td>{{ enfant.genre }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('enfant_show', { 'id': enfant.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('enfant_edit', { 'id': enfant.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('enfant_new') }}">Create a new enfant</a>
+        </li>
+    </ul>
+{% endblock %}
