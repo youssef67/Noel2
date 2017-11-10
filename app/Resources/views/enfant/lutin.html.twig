@@ -27,7 +27,6 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form method="post" action="enfant/edit/{{ enfant.id }}">
                     <p>{{ enfant.cadeau1 }}</p>
                     <select class="form-control">
                         <option {% if enfant.statutCadeau1 is empty %} selected {% endif %}>En cours</option>
@@ -53,13 +52,12 @@
                         <option {% if enfant.statutCadeau5 is empty %} selected {% endif %}>En cours</option>
                         <option {% if not enfant.statutCadeau5 is empty %} selected {% endif %}select>Terminé</option>
                     </select>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                     <button type="submit" class="btn btn-primary">Confirmer</button>
                 </div>
-                </form>
+
             </div>
         </div>
     </div>

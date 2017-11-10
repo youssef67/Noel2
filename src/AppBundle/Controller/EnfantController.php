@@ -124,10 +124,8 @@ class EnfantController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('enfant_edit', array('id' => $enfant->getId()));
         }
-        return $this->redirectToRoute('enfant_index'));
+        return $this->redirectToRoute('enfant_index');
     }
 
     /*

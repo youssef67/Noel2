@@ -14,7 +14,18 @@ class EnfantType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('adresse')->add('ville')->add('genre', ChoiceType::class, array('choices' => array('Garçon' => 0, 'Fille' => 1)))->add('cadeau1')->add('cadeau2')->add('cadeau3')->add('cadeau4')->add('cadeau5');
+        $builder
+            ->add('nom')
+            ->add('prenom')
+            ->add('adresse')
+            ->add('ville')
+            ->add('genre', ChoiceType::class, array('choices' => array('Garçon' => 0, 'Fille' => 1)))
+            ->add('cadeau1')
+            ->add('cadeau2')
+            ->add('cadeau3')
+            ->add('cadeau4')
+            ->add('cadeau5')
+        ;
     }
     
     /**
