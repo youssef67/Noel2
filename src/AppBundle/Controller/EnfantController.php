@@ -14,6 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class EnfantController extends Controller
 {
+
     /**
      * Enfants par ville.
      *
@@ -63,7 +64,7 @@ class EnfantController extends Controller
 
         $enfants = $em->getRepository('AppBundle:Enfant')->findAll();
 
-        return $this->render('enfant/index.html.twig', array(
+        return $this->render('enfant/lutin.html.twig', array(
             'enfants' => $enfants,
         ));
     }
@@ -111,12 +112,31 @@ class EnfantController extends Controller
     }
 
     /**
+     * Edit an existing enfant entity.
+     *
+     * @Route("/edit/{id}", name="enfant_edit")
+     * @Method({"POST"})
+     */
+    public function editAction(Request $request, Enfant $enfant)
+    {
+        $editForm = $this->createForm('AppBundle\Form\EnfantType', $enfant);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('enfant_edit', array('id' => $enfant->getId()));
+        }
+        return $this->redirectToRoute('enfant_index'));
+    }
+
+    /*
      * Displays a form to edit an existing enfant entity.
      *
      * @Route("/{id}/edit", name="enfant_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Enfant $enfant)
+/*    public function editAction(Request $request, Enfant $enfant)
     {
         $deleteForm = $this->createDeleteForm($enfant);
         $editForm = $this->createForm('AppBundle\Form\EnfantType', $enfant);
@@ -133,7 +153,7 @@ class EnfantController extends Controller
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
-    }
+    }*/
 
     /**
      * Deletes a enfant entity.

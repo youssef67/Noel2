@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for enfant in enfants %}
+        <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+            <div class="well profile_view">
+                <div class="col-sm-12">
+                    <h4 class="brief"><i>#1</i></h4>
+                    <div class="left col-xs-12">
+                        <h2>{{ enfant.nom }} {{ enfant.prenom }}</h2>
+                        <p><strong>Genre: </strong>{{ enfant.genre }}</p>
+                        <p><strong>Création: </strong>{{ enfant.dateCreation | date('d/m/Y') }}</p>
+                        <p><strong>Adresse: </strong>{{ enfant.adresse }}</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 bottom text-center">
+                    <div class="col-xs-6 col-sm-6 emphasis">
+                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#{{ enfant.id }}">
+                            <i class="fa fa-gift"> </i> Voir les cadeaux</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="modal fade" id="{{ enfant.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="post" action="enfant/edit/{{ enfant.id }}">
+                    <p>{{ enfant.cadeau1 }}</p>
+                    <select class="form-control">
+                        <option {% if enfant.statutCadeau1 is empty %} selected {% endif %}>En cours</option>
+                        <option {% if not enfant.statutCadeau1 is empty %} selected {% endif %}select>Terminé</option>
+                    </select>
+                    <p>{{ enfant.cadeau2 }}</p>
+                    <select class="form-control">
+                        <option {% if enfant.statutCadeau2 is empty %} selected {% endif %}>En cours</option>
+                        <option {% if not enfant.statutCadeau2 is empty %} selected {% endif %}select>Terminé</option>
+                    </select>
+                    <p>{{ enfant.cadeau3 }}</p>
+                    <select class="form-control">
+                        <option {% if enfant.statutCadeau3 is empty %} selected {% endif %}>En cours</option>
+                        <option {% if not enfant.statutCadeau3 is empty %} selected {% endif %}select>Terminé</option>
+                    </select>
+                    <p>{{ enfant.cadeau4 }}</p>
+                    <select class="form-control">
+                        <option {% if enfant.statutCadeau4 is empty %} selected {% endif %}>En cours</option>
+                        <option {% if not enfant.statutCadeau4 is empty %} selected {% endif %}select>Terminé</option>
+                    </select>
+                    <p>{{ enfant.cadeau5 }}</p>
+                    <select class="form-control">
+                        <option {% if enfant.statutCadeau5 is empty %} selected {% endif %}>En cours</option>
+                        <option {% if not enfant.statutCadeau5 is empty %} selected {% endif %}select>Terminé</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Confirmer</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+
+
+{% endblock body %}
