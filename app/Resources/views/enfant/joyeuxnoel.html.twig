@@ -1,6 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    Merci pour ta commande au Père Noël.
-    <a href="/" class="btn btn-primary">Retour à la page d'accueil</a>
+    <style>
+        .form-control {
+            margin-bottom: 20px;
+        }
+        label {
+            color: white;
+        }
+        .noel-youssef {
+            margin-left: 5% !important;; font-size: 30px !important; text-align: justify;
+        }
+    </style>
+    <div id="snow">
+        <div class="christmas">
+            <div class="headLeft">
+            </div>
+            <div class="headRight">
+            </div>
+            <div class="sliderWrap">
+                <div class="alert alert-success" >
+                    <strong class="text-center" style="margin-left: 40%">Ta liste a bien été envoyée !</strong>
+                </div>
+                <p style="color: white" class="noel-youssef">Le 24 décembre assure toi que ta cheminée n'est pas allumée et que ta chaussette n'est pas trouée et est bien accrochée ! ;D</p>
+                <img src="https://i.pinimg.com/originals/36/50/c1/3650c1faba9384cae7e53842d9568caa.png" alt="" style="width: 50%; margin-left: 20%;">
+            </div>
+            </div>
+            <div class="footerWrap">
+                <div class="footerInner">
+                    <span class="copyright" style="margin-top: 50px;">© {{ date()|date('Y') }} by Wild Code School Strasbourg</span>
+                    <a class="copyright" style="margin-top: 10px;" href="/enfant/connexion">CONNEXION DES LUTINS ADMINISTRATEURS</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

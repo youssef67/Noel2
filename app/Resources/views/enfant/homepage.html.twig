@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<div id="snow">
     <div class="christmas">
         <div class="headLeft">
         </div>
         <div class="headRight">
         </div>
-        <div class="dynamicMessage">
+        <div class="dynamicMessage" style="width: 1020px !important;">
             Wild Christmas</div>
         <div class="sliderWrap">
             <div class="sliderInner">
@@ -28,8 +28,9 @@
                     <area href="enfant/new" coords="165,190,300,215" alt="" />
                 </map>
                 <span class="copyright" style="margin-top: 50px;">© {{ date()|date('Y') }} by Wild Code School Strasbourg</span>
-                <a class="copyright" style="margin-top: 10px;" href="enfant">CONNEXION DES LUTINS ADMINISTRATEURS</a>
+                <a class="copyright" style="margin-top: 10px;" href="/enfant/connexion">CONNEXION DES LUTINS ADMINISTRATEURS</a>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

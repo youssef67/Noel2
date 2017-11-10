@@ -53,6 +53,21 @@ class EnfantController extends Controller
     }
 
     /**
+     *
+     * @Route("/connexion", name="connexion")
+     * @Method("GET")
+     */
+    public function connexionAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $enfants = $em->getRepository('AppBundle:Enfant')->findAll();
+
+        return $this->render('enfant/co.html.twig');
+    }
+
+    /**
      * Lists all enfant entities.
      *
      * @Route("/", name="enfant_index")
@@ -124,10 +139,8 @@ class EnfantController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('enfant_edit', array('id' => $enfant->getId()));
         }
-        return $this->redirectToRoute('enfant_index'));
+        return $this->redirectToRoute('enfant_index');
     }
 
     /*

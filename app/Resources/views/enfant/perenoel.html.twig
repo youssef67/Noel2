@@ -1,9 +1,83 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Père Noël, voici la liste des cadeaux à livrer.</h1>
 
-    {% for enfant in enfants %}
-        <a href="/enfant/ville/{{ enfant.ville }}">{{ enfant.ville }}</a><br>
-    {% endfor %}
+    <body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="#" class="site_title"><i class="fa fa-gift"></i> <span>Wild christmas</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <!-- /menu profile quick info -->
+                    <br>
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Gestionnaire</h3>
+                        </div>
+                        <div class="menu_section active">
+                            <ul class="nav side-menu" style="">
+                                <li><a href="enfant"><i class="fa fa-gift"></i>Gestion des cadeaux <span class="label label-success pull-right">Lutins</span></a></li>
+                                <li><a href="enfant/livraison"><i class="fa fa-gift"></i> Gestion des livraisons <span class="label label-danger pull-right">Père Noël</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main" style="min-height: 1023px;">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Gestion des livraisons</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <!-- start project list -->
+                                    <table class="table table-striped projects">
+                                        <tbody>
+                                        {% for enfant in enfants %}
+                                        <tr>
+                                            <td>
+                                                <a>{{ enfant.ville }}</a>
+                                            </td>
+                                            <td>
+                                                <span class="label label-warning">{{ enfant.statutLivraison }}</span>
+                                            </td>
+                                            <td>
+                                                <a href="/enfant/ville/{{ enfant.ville }}" class="btn btn-primary btn-xs"><i class="fa fa-gift"></i> Voir </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <!-- end project list -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    </body>
+
 {% endblock %}

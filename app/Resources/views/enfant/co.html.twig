@@ -1,0 +1,62 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+    <body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Connexion</h1>
+                        <div>
+                            <form method="post">
+                                <input type="password" class="form-control" placeholder="Mot de passe" required="" id="pass">
+                                <span id="err"></span>
+                        </div>
+                        <div>
+                            <a class="btn btn-success submit" id="submit" type="submit">Log in</a>
+                        </div>
+                    </form>
+                    </form>
+                </section>
+            </div>
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required="">
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required="">
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="">
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $("#submit").click(function() {
+            var password = "stras";
+            if($("#pass").val() !== password) {
+                $("#err").text("Mot de passe incorrect");
+            }
+            else {
+                window.location.href = "/enfant";
+
+            }
+        });
+
+    </script>
+
+{% endblock %}

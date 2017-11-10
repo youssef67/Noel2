@@ -1,17 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Enfant creation</h1>
-    <div id="form-enfant">
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <h1 class="text-center" style="color:white;">Créer une nouvelle liste !</h1>
+    <style>
+        .form-control {
+            margin-bottom: 20px;
+        }
+        label {
+            color: white;
+        }
+    </style>
+<div id="snow">
+    <div class="christmas">
+        <div class="headLeft">
+        </div>
+        <div class="headRight">
+        </div>
+        <div class="sliderWrap">
+            <div id="form-enfant" style=" margin-left: 300px; margin-right: 300px; margin-bottom: 50px">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Envoyer" class="btn btn-success" style="margin-top: 10px;"/>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="footerWrap">
+            <div class="footerInner">
+                <span class="copyright" style="margin-top: 50px;">© {{ date()|date('Y') }} by Wild Code School Strasbourg</span>
+                <a class="copyright" style="margin-top: 10px;" href="/enfant/connexion">CONNEXION DES LUTINS ADMINISTRATEURS</a>
+            </div>
+        </div>
     </div>
-
-    <ul>
-        <li>
-            <a href="{{ path('enfant_index') }}">Back to the list</a>
-        </li>
-    </ul>
+</div>
 {% endblock %}

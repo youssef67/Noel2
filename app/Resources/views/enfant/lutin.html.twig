@@ -1,6 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
+
+    <body class="nav-md">
+
 
     <div class="container body">
         <div class="main_container">
@@ -20,8 +23,8 @@
                         </div>
                         <div class="menu_section active">
                             <ul class="nav side-menu" style="">
-                                <li><a href="enfant"><i class="fa fa-gift"></i> Gestion des cadeaux <span class="label label-success pull-right">Lutins</span></a></li>
-                                <li><a href="enfant/livraison"><i class="fa fa-gift"></i> Gestion des livraisons <span class="label label-danger pull-right">Père Noël</span></a></li>
+                                <li><a href=""><i class="fa fa-gift"></i> Gestion des cadeaux <span class="label label-success pull-right">Lutins</span></a></li>
+                                <li><a href="livraison"><i class="fa fa-gift"></i> Gestion des livraisons <span class="label label-danger pull-right">Père Noël</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -35,11 +38,26 @@
             </div>
             <!-- /top navigation -->
             <!-- page content -->
-            <div class="right_col" role="main" style="min-height: 523px;">
+            <div class="right_col" role="main" style="min-height: 1023px;">
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
                             <h3>Gestion des cadeaux</h3>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row tile_count">
+                        <div class="col-md-6 col-sm-4 col-xs-6 tile_stats_count">
+                            <div class="col-md-6 col-sm-4 col-xs-6 tile_stats_count">
+                                <span class="count_top"><i class="fa fa-gift fa-3x"></i> Demandes en cours</span>
+                                <div class="count" style="color: #26B99A">{{ enfants|length}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-6 ">
+                            <div class="col-md-6 col-sm-4 col-xs-6 tile_stats_count">
+                                <span class="count_top"><i class="fa fa-gift fa-3x"></i> Cadeaux à livrer</span>
+                                <div class="count" style="color: #26B99A">{{ enfants|length * 5}}</div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -54,12 +72,12 @@
                                             <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
                                                 <div class="well profile_view">
                                                     <div class="col-sm-12">
-                                                        <h4 class="brief"><i>#1</i></h4>
+                                                        <h4 class="brief"><i>#{{ enfant.id }}</i></h4>
                                                         <div class="left col-xs-12">
                                                             <h2>{{ enfant.nom }} {{ enfant.prenom }}</h2>
                                                             <p><strong>Genre: </strong>{{ enfant.genre }}</p>
                                                             <p><strong>Création: </strong>{{ enfant.dateCreation | date('d/m/Y') }}</p>
-                                                            <p><strong>Adresse: </strong>{{ enfant.adresse }}</p>
+                                                            <p><strong>Adresse: </strong>{{ enfant.adresse }} {{ enfant.ville }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-12 bottom text-center">
@@ -70,62 +88,27 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="modal fade" id="{{ enfant.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-body">
-                                                            <form method="post" action="enfant/edit/{{ enfant.id }}">
-                                                                <p>{{ enfant.cadeau1 }}</p>
-                                                                <select class="form-control">
-                                                                    <option {% if enfant.statutCadeau1 is empty %} selected {% endif %}>En cours</option>
-                                                                    <option {% if not enfant.statutCadeau1 is empty %} selected {% endif %}select>Terminé</option>
-                                                                </select>
-                                                                <p>{{ enfant.cadeau2 }}</p>
-                                                                <select class="form-control">
-                                                                    <option {% if enfant.statutCadeau2 is empty %} selected {% endif %}>En cours</option>
-                                                                    <option {% if not enfant.statutCadeau2 is empty %} selected {% endif %}select>Terminé</option>
-                                                                </select>
-                                                                <p>{{ enfant.cadeau3 }}</p>
-                                                                <select class="form-control">
-                                                                    <option {% if enfant.statutCadeau3 is empty %} selected {% endif %}>En cours</option>
-                                                                    <option {% if not enfant.statutCadeau3 is empty %} selected {% endif %}select>Terminé</option>
-                                                                </select>
-                                                                <p>{{ enfant.cadeau4 }}</p>
-                                                                <select class="form-control">
-                                                                    <option {% if enfant.statutCadeau4 is empty %} selected {% endif %}>En cours</option>
-                                                                    <option {% if not enfant.statutCadeau4 is empty %} selected {% endif %}select>Terminé</option>
-                                                                </select>
-                                                                <p>{{ enfant.cadeau5 }}</p>
-                                                                <select class="form-control">
-                                                                    <option {% if enfant.statutCadeau5 is empty %} selected {% endif %}>En cours</option>
-                                                                    <option {% if not enfant.statutCadeau5 is empty %} selected {% endif %}select>Terminé</option>
-                                                                </select>
-
+                                                            <p>Cadeau 1 : {{ enfant.cadeau1 }}</p>
+                                                            <p>Cadeau 2 : {{ enfant.cadeau2 }}</p>
+                                                            <p>Cadeau 3 : {{ enfant.cadeau3 }}</p>
+                                                            <p>Cadeau 4 : {{ enfant.cadeau4 }}</p>
+                                                            <p>Cadeau 5 : {{ enfant.cadeau5 }}</p>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                            <button type="submit" class="btn btn-primary">Confirmer</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                                                         </div>
-                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /page content -->
-            <!-- footer content -->
-            <!-- /footer content -->
-        </div>
-    </div>
+                                            {% endfor %}
 
 
 
+    </body>
 
-{% endblock body %}
+
+{% endblock %}
