@@ -7,8 +7,6 @@
         </div>
         <div class="headRight">
         </div>
-        <div id="cntdwn" class="counter">
-        </div>
         <div class="dynamicMessage">
             Wild Christmas</div>
         <div class="sliderWrap">
@@ -29,19 +27,9 @@
                 <map id="visitLink" name="visitLink">
                     <area href="enfant/new" coords="165,190,300,215" alt="" />
                 </map>
-                <span class="copyright" style="margin-top: 50px;">© <?php echo date('Y') ?> by Wild Code School Strasbourg</span>
+                <span class="copyright" style="margin-top: 50px;">© {{ date()|date('Y') }} by Wild Code School Strasbourg</span>
                 <a class="copyright" style="margin-top: 10px;" href="enfant">CONNEXION DES LUTINS ADMINISTRATEURS</a>
             </div>
         </div>
     </div>
-
-    <p>
-        <a href="/enfant/new">Je suis un enfant</a>
-    </p>
-    <p>
-        <a href="/enfant">Je suis un elfe</a>
-    </p>
-    <p>
-        <a href="/enfant/livraison">Je suis le père Noël</a>
-    </p>
 {% endblock %}

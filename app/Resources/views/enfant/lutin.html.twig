@@ -2,68 +2,130 @@
 
 {% block body %}
 
-    {% for enfant in enfants %}
-        <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
-            <div class="well profile_view">
-                <div class="col-sm-12">
-                    <h4 class="brief"><i>#1</i></h4>
-                    <div class="left col-xs-12">
-                        <h2>{{ enfant.nom }} {{ enfant.prenom }}</h2>
-                        <p><strong>Genre: </strong>{{ enfant.genre }}</p>
-                        <p><strong>Création: </strong>{{ enfant.dateCreation | date('d/m/Y') }}</p>
-                        <p><strong>Adresse: </strong>{{ enfant.adresse }}</p>
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="#" class="site_title"><i class="fa fa-gift"></i> <span>Wild christmas</span></a>
                     </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <!-- /menu profile quick info -->
+                    <br>
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Gestionnaire</h3>
+                        </div>
+                        <div class="menu_section active">
+                            <ul class="nav side-menu" style="">
+                                <li><a href="enfant"><i class="fa fa-gift"></i> Gestion des cadeaux <span class="label label-success pull-right">Lutins</span></a></li>
+                                <li><a href="enfant/livraison"><i class="fa fa-gift"></i> Gestion des livraisons <span class="label label-danger pull-right">Père Noël</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <!-- /menu footer buttons -->
                 </div>
-                <div class="col-xs-12 bottom text-center">
-                    <div class="col-xs-6 col-sm-6 emphasis">
-                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#{{ enfant.id }}">
-                            <i class="fa fa-gift"> </i> Voir les cadeaux</button>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main" style="min-height: 523px;">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Gestion des cadeaux</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        {% for enfant in enfants %}
+                                            <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                                                <div class="well profile_view">
+                                                    <div class="col-sm-12">
+                                                        <h4 class="brief"><i>#1</i></h4>
+                                                        <div class="left col-xs-12">
+                                                            <h2>{{ enfant.nom }} {{ enfant.prenom }}</h2>
+                                                            <p><strong>Genre: </strong>{{ enfant.genre }}</p>
+                                                            <p><strong>Création: </strong>{{ enfant.dateCreation | date('d/m/Y') }}</p>
+                                                            <p><strong>Adresse: </strong>{{ enfant.adresse }}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 bottom text-center">
+                                                        <div class="col-xs-6 col-sm-6 emphasis">
+                                                            <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#{{ enfant.id }}">
+                                                                <i class="fa fa-gift"> </i> Voir les cadeaux</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal fade" id="{{ enfant.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <form method="post" action="enfant/edit/{{ enfant.id }}">
+                                                                <p>{{ enfant.cadeau1 }}</p>
+                                                                <select class="form-control">
+                                                                    <option {% if enfant.statutCadeau1 is empty %} selected {% endif %}>En cours</option>
+                                                                    <option {% if not enfant.statutCadeau1 is empty %} selected {% endif %}select>Terminé</option>
+                                                                </select>
+                                                                <p>{{ enfant.cadeau2 }}</p>
+                                                                <select class="form-control">
+                                                                    <option {% if enfant.statutCadeau2 is empty %} selected {% endif %}>En cours</option>
+                                                                    <option {% if not enfant.statutCadeau2 is empty %} selected {% endif %}select>Terminé</option>
+                                                                </select>
+                                                                <p>{{ enfant.cadeau3 }}</p>
+                                                                <select class="form-control">
+                                                                    <option {% if enfant.statutCadeau3 is empty %} selected {% endif %}>En cours</option>
+                                                                    <option {% if not enfant.statutCadeau3 is empty %} selected {% endif %}select>Terminé</option>
+                                                                </select>
+                                                                <p>{{ enfant.cadeau4 }}</p>
+                                                                <select class="form-control">
+                                                                    <option {% if enfant.statutCadeau4 is empty %} selected {% endif %}>En cours</option>
+                                                                    <option {% if not enfant.statutCadeau4 is empty %} selected {% endif %}select>Terminé</option>
+                                                                </select>
+                                                                <p>{{ enfant.cadeau5 }}</p>
+                                                                <select class="form-control">
+                                                                    <option {% if enfant.statutCadeau5 is empty %} selected {% endif %}>En cours</option>
+                                                                    <option {% if not enfant.statutCadeau5 is empty %} selected {% endif %}select>Terminé</option>
+                                                                </select>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                                            <button type="submit" class="btn btn-primary">Confirmer</button>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-    <div class="modal fade" id="{{ enfant.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form method="post" action="enfant/edit/{{ enfant.id }}">
-                    <p>{{ enfant.cadeau1 }}</p>
-                    <select class="form-control">
-                        <option {% if enfant.statutCadeau1 is empty %} selected {% endif %}>En cours</option>
-                        <option {% if not enfant.statutCadeau1 is empty %} selected {% endif %}select>Terminé</option>
-                    </select>
-                    <p>{{ enfant.cadeau2 }}</p>
-                    <select class="form-control">
-                        <option {% if enfant.statutCadeau2 is empty %} selected {% endif %}>En cours</option>
-                        <option {% if not enfant.statutCadeau2 is empty %} selected {% endif %}select>Terminé</option>
-                    </select>
-                    <p>{{ enfant.cadeau3 }}</p>
-                    <select class="form-control">
-                        <option {% if enfant.statutCadeau3 is empty %} selected {% endif %}>En cours</option>
-                        <option {% if not enfant.statutCadeau3 is empty %} selected {% endif %}select>Terminé</option>
-                    </select>
-                    <p>{{ enfant.cadeau4 }}</p>
-                    <select class="form-control">
-                        <option {% if enfant.statutCadeau4 is empty %} selected {% endif %}>En cours</option>
-                        <option {% if not enfant.statutCadeau4 is empty %} selected {% endif %}select>Terminé</option>
-                    </select>
-                    <p>{{ enfant.cadeau5 }}</p>
-                    <select class="form-control">
-                        <option {% if enfant.statutCadeau5 is empty %} selected {% endif %}>En cours</option>
-                        <option {% if not enfant.statutCadeau5 is empty %} selected {% endif %}select>Terminé</option>
-                    </select>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                    <button type="submit" class="btn btn-primary">Confirmer</button>
-                </div>
-                </form>
-            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <!-- /footer content -->
         </div>
     </div>
-        {% endfor %}
+
+
 
 
 {% endblock body %}

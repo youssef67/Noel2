@@ -24,6 +24,9 @@
 </head>
 <body>
 {% block body %}{% endblock %}
+<script type="text/javascript">
+    $( ":input" ).addClass( "form-control" );
+</script>
 <script type="text/javascript" src="{{ asset('assets/site/scripts/jquery.refineslide.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/site/scripts/ios-orientation-change-fix.js') }}"></script>
 {% block javascripts %}{% endblock %}
