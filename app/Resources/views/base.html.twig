@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Joyeux Noël!{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic%7CLobster+Two:400,400italic,700,700italic%7CMountains+of+Christmas:400,700'
+          rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/site/styles/core.css') }}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/site/styles/refineslide.css') }}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/site/styles/refineslide-theme-dark.css') }}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/site/styles/thickbox.css') }}" media="all" />
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/thickbox.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/rotate.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/jquery.validate.pack.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/jquery.jplayer.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/ttw-music-player.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/myplaylist.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/site/scripts/snow.js') }}"></script>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}{% endblock %}
+<script type="text/javascript" src="{{ asset('assets/site/scripts/jquery.refineslide.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/site/scripts/ios-orientation-change-fix.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
 </html>

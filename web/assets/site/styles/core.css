@@ -1,0 +1,100 @@
+body { height:1500px; background:url('img/bg.jpg') no-repeat top left; padding:0px; margin:0px; overflow:hidden; }
+
+.christmas { width:100%; overflow:hidden;}
+
+.headLeft { width:272px; height:283px; top:0px; left:0; background:url('img/headerLeft.png') no-repeat top left; position:absolute; z-index:999; }
+.headRight { width:281px; height:268px; top:0px; right:0; background:url('img/headerRight.png') no-repeat top left; position:absolute; z-index:999; }
+
+.playerControl { display:block; width:124px; height:71px; background:url('img/musicPlayerControl.png') no-repeat top left; position:absolute; top:130px; right:120px; z-index:999; }
+
+.footerWrap { width:100%; height:125px; position:fixed; bottom:0px; background:url('img/footerBg.png') no-repeat bottom center; z-index:80; }
+.footerWrap .footerInner { width:980px; height:100%; position:relative; left:50%; margin-left:-490px; text-align:center; }
+.footerWrap .footerInner .link { position:absolute; left:-22px; bottom:47px; text-decoration: none; border: 0px }
+.footerWrap .footerInner .copyright { display:block;  font-family:'Libre Baskerville'; font-size:11px; color:#082028; }
+.footerWrap .footerInner .logo { margin:28px auto 18px; }
+
+.footerWrap .footerInner ul.social { list-style:none; position:absolute; bottom:0; right:0; }
+.footerWrap .footerInner ul.social li { float:left; }
+.footerWrap .footerInner ul.social li>a { display:block; text-indent:-9999px; position:absolute; }
+.footerWrap .footerInner ul.social li>a .mask { display:none; width:83px; height:86px; text-indent:1px; opacity:0; position:absolute; top:-86px; left:-73px; background:url('img/socialHoverBg.png') no-repeat center top; font-family:'Mountains of Christmas'; font-size:18.75px; -webkit-transition: all .4s ease-in-out 0s; -ms-transition: all .4s ease-in-out 0s; -moz-transition: all .4s ease-in-out 0s; -o-transition: all .4s ease-in-out 0s; }
+.footerWrap .footerInner ul.social li>a:hover .mask { display:block; opacity:1; }
+.footerWrap .footerInner ul.social li>a.tw { width:58px; height:65px; bottom:57px; right:172px; background:url('img/twitter.png') no-repeat top left; }
+.footerWrap .footerInner ul.social li>a.tw .mask { color:#36bfff; padding-top:25px; }
+.footerWrap .footerInner ul.social li>a.fb { width:50px; height:72px; bottom:56px; right:100px; background:url('img/facebook.png') no-repeat top left; }
+.footerWrap .footerInner ul.social li>a.fb .mask { color:#3e5b9c; padding-top:25px; }
+.footerWrap .footerInner ul.social li>a.mail { width:74px; height:53px; bottom:56px; right:5px; background:url('img/mail.png') no-repeat top left; }
+.footerWrap .footerInner ul.social li>a.mail .mask { color:#dc0034; top:-95px; left:-43px; padding-top:18px; line-height:23px; }
+
+ .rotate { position:absolute !important; top:50%; left:50%; margin-left:-490px; margin-top:-460px; z-index:-1; }
+
+.counter { display:block; width:500px; height:201px; top:0px; left:50%; margin-left:-250px; background:url('img/counter.png') no-repeat top left; position:absolute; z-index:70; overflow:hidden; cursor:pointer; }
+.counter span { display:block; width:100%; font-family:'Lobster Two'; text-align:center; }
+.counter .day { font-size:26px; font-weight:bold; color:#383131; padding-top:5px; }
+.counter .time { font-size:37px; font-weight:400; color:#d21027; }
+
+.dynamicMessage { width:980px; height:110px; margin:90px auto 0px; position:relative; text-align:center; }
+.dynamicMessage span { display:block; float:left; height:110px; margin-right:-5px; }
+
+.sliderWrap { width:980px; height:550px; position:absolute; top:50%; left:50%; margin-left:-490px; margin-top:-275px; }
+.sliderWrap .sliderInner { width:530px; height:325px; margin:0px auto; }
+.sliderBottom { width:706px; height:214px; margin:-50px auto 0px; }
+
+.emailSender { display:none; width:121px; height:284px; position:absolute; right:-100px; bottom:115px; padding:87px 83px 0px 102px; background:url('img/emailSenderBg.png') no-repeat top left; text-align:center; z-index:100; font-family:'Lobster Two'; font-size:16px; color:#082028; line-height:16px; }
+.emailSender p { display:block; margin:0px 0px 4px 0px; padding:0px; }
+.emailSender p.success { width:24px; height:21px; margin:43px auto 0px; background:url('img/success.png') no-repeat top left; }
+.emailSender p.not { width:24px; height:21px; margin:43px auto 0px; color:#F11012; }
+.emailSender input[type=text] { width:105px; height:10px; border:1px solid #E0E0E0; padding:7px; margin-bottom:11px; font-family:Arial; font-size:11px; color:#e0e0e0; }
+.emailSender input[type=text]:focus { color:#082028; }
+.emailSender input[type=text].error { border-color:#F11012; }
+.emailSender a { display:block; float:left; text-indent:-9999px; }
+.emailSender a.prev { display:block; width:38px; height:30px; background:url('img/emailPrev.png') no-repeat top left; text-indent:-9999px; }
+.emailSender a.send { display:block; width:79px; height:30px; background:url('img/emailSend.png') no-repeat top left; text-indent:-9999px; margin-left:4px; }
+.emailSender p { position:relative; padding:0px; margin:0px; }
+.emailSender label { display:inline; position:absolute; top:5px; left:7px; font-family:Arial; font-size:11px; color:#b6bcc0; }
+
+.red { color:#c43042; font-weight:bold; text-decoration:none; }
+
+span.alpA { width:77px; background:url('alph/a.png') no-repeat top left; }
+span.alpB { width:72px; background:url('alph/b.png') no-repeat top left; }
+span.alpC { width:80px; background:url('alph/c.png') no-repeat top left; }
+span.alpD { width:77px; background:url('alph/d.png') no-repeat top left; }
+span.alpE { width:66px; background:url('alph/e.png') no-repeat top left; }
+span.alpF { width:66px; background:url('alph/f.png') no-repeat top left; }
+span.alpG { width:77px; background:url('alph/g.png') no-repeat top left; }
+span.alpH { width:76px; background:url('alph/h.png') no-repeat top left; }
+span.alpI { width:58px; background:url('alph/i.png') no-repeat top left; }
+span.alpJ { width:63px; background:url('alph/j.png') no-repeat top left; }
+span.alpK { width:72px; background:url('alph/k.png') no-repeat top left; }
+span.alpL { width:63px; background:url('alph/l.png') no-repeat top left; }
+span.alpM { width:90px; background:url('alph/m.png') no-repeat top left; }
+span.alpN { width:80px; background:url('alph/n.png') no-repeat top left; }
+span.alpO { width:85px; background:url('alph/o.png') no-repeat top left; }
+span.alpP { width:73px; background:url('alph/p.png') no-repeat top left; }
+span.alpQ { width:88px; background:url('alph/q.png') no-repeat top left; }
+span.alpR { width:77px; background:url('alph/r.png') no-repeat top left; }
+span.alpS { width:77px; background:url('alph/s.png') no-repeat top left; }
+span.alpT { width:78px; background:url('alph/t.png') no-repeat top left; }
+span.alpU { width:76px; background:url('alph/u.png') no-repeat top left; }
+span.alpV { width:81px; background:url('alph/v.png') no-repeat top left; }
+span.alpW { width:103px; background:url('alph/w.png') no-repeat top left; }
+span.alpX { width:81px; background:url('alph/x.png') no-repeat top left; }
+span.alpY { width:76px; background:url('alph/y.png') no-repeat top left; }
+span.alpZ { width:74px; background:url('alph/z.png') no-repeat top left; }
+
+span.alp0 { width:74px; background:url('alph/0.png.html') no-repeat top left; }
+span.alp1 { width:52px; background:url('alph/1.png') no-repeat top left; }
+span.alp2 { width:73px; background:url('alph/2.png') no-repeat top left; }
+span.alp3 { width:63px; background:url('alph/3.png') no-repeat top left; }
+span.alp4 { width:69px; background:url('alph/4.png') no-repeat top left; }
+span.alp5 { width:69px; background:url('alph/5.png') no-repeat top left; }
+span.alp6 { width:67px; background:url('alph/6.png') no-repeat top left; }
+span.alp7 { width:67px; background:url('alph/7.png') no-repeat top left; }
+span.alp8 { width:69px; background:url('alph/8.png') no-repeat top left; }
+span.alp9 { width:66px; background:url('alph/9.png') no-repeat top left; }
+
+span.alpPoint { width:36px; background:url('alph/point.png') no-repeat top left; }
+span.alpQuestion { width:64px; background:url('alph/question.png') no-repeat top left; }
+span.alpExclamation { width:38px; background:url('alph/exclamation.png') no-repeat top left; }
+span.alpComma { width:44px; background:url('alph/comma.png') no-repeat top left; }
+
+span.alpSpace { width:10px; }

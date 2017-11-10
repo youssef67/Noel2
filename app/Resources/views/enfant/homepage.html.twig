@@ -1,6 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+    <div class="christmas">
+        <div class="headLeft">
+        </div>
+        <div class="headRight">
+        </div>
+        <div id="cntdwn" class="counter">
+        </div>
+        <div class="dynamicMessage">
+            Wild Christmas</div>
+        <div class="sliderWrap">
+            <div class="sliderInner">
+                <ul id="images" class="rs-slider">
+                    <li class="group"><a href="javascript:;">
+                            <img src="{{ asset('assets/site/images/Slider/03.png') }}" style="margin-top: 120px;"/>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="sliderBottom">
+                <img src="{{ asset('assets/site/images/sliderBottom.png') }}" width="706" height="214" alt="sliderBottom" />
+            </div>
+        </div>
+        <div class="footerWrap">
+            <div class="footerInner">
+                <img class="link" src="{{ asset('assets/site/images/footerLink.png') }}" usemap="#visitLink" alt="footerLink" />
+                <map id="visitLink" name="visitLink">
+                    <area href="enfant/new" coords="165,190,300,215" alt="" />
+                </map>
+                <span class="copyright" style="margin-top: 50px;">© <?php echo date('Y') ?> by Wild Code School Strasbourg</span>
+                <a class="copyright" style="margin-top: 10px;" href="enfant">CONNEXION DES LUTINS ADMINISTRATEURS</a>
+            </div>
+        </div>
+    </div>
+
     <p>
         <a href="/enfant/new">Je suis un enfant</a>
     </p>
